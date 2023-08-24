@@ -21,7 +21,7 @@ namespace BushTripRelocator.Services
 
         SimData GetSimData();
 
-        void LoadCheckpointToSim(SimData simData);
+        void LoadCheckpointToSim(SimData simData, bool coldAndDark);
 
         void LoadTimeToSim(TimeData timeData);
 

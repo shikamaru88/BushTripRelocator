@@ -85,6 +85,7 @@ namespace BushTripRelocator
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.DisconnectButton = new System.Windows.Forms.Button();
+            this.ColdAndDarkCheckBox = new System.Windows.Forms.CheckBox();
             this.CheckpointTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -133,7 +134,7 @@ namespace BushTripRelocator
             this.LoadFuelCheckbox.AutoSize = true;
             this.LoadFuelCheckbox.Checked = true;
             this.LoadFuelCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.LoadFuelCheckbox.Location = new System.Drawing.Point(17, 141);
+            this.LoadFuelCheckbox.Location = new System.Drawing.Point(14, 141);
             this.LoadFuelCheckbox.Name = "LoadFuelCheckbox";
             this.LoadFuelCheckbox.Size = new System.Drawing.Size(70, 17);
             this.LoadFuelCheckbox.TabIndex = 4;
@@ -323,6 +324,7 @@ namespace BushTripRelocator
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Controls.Add(this.ColdAndDarkCheckBox);
             this.tabPage1.Controls.Add(this.DeleteCheckpointButton);
             this.tabPage1.Controls.Add(this.SecondsSaveLabel);
             this.tabPage1.Controls.Add(this.MinutesSaveLabel);
@@ -426,7 +428,7 @@ namespace BushTripRelocator
             // LoadTimeCheckbox
             // 
             this.LoadTimeCheckbox.AutoSize = true;
-            this.LoadTimeCheckbox.Location = new System.Drawing.Point(17, 164);
+            this.LoadTimeCheckbox.Location = new System.Drawing.Point(14, 164);
             this.LoadTimeCheckbox.Name = "LoadTimeCheckbox";
             this.LoadTimeCheckbox.Size = new System.Drawing.Size(72, 17);
             this.LoadTimeCheckbox.TabIndex = 23;
@@ -663,6 +665,18 @@ namespace BushTripRelocator
             this.DisconnectButton.UseVisualStyleBackColor = false;
             this.DisconnectButton.Click += new System.EventHandler(this.DisconnectButton_Click);
             // 
+            // ColdAndDarkCheckBox
+            // 
+            this.ColdAndDarkCheckBox.AutoSize = true;
+            this.ColdAndDarkCheckBox.Checked = true;
+            this.ColdAndDarkCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ColdAndDarkCheckBox.Location = new System.Drawing.Point(14, 187);
+            this.ColdAndDarkCheckBox.Name = "ColdAndDarkCheckBox";
+            this.ColdAndDarkCheckBox.Size = new System.Drawing.Size(92, 17);
+            this.ColdAndDarkCheckBox.TabIndex = 32;
+            this.ColdAndDarkCheckBox.Text = "Cold and dark";
+            this.ColdAndDarkCheckBox.UseVisualStyleBackColor = true;
+            // 
             // MainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -747,6 +761,7 @@ namespace BushTripRelocator
         private TextBox MaxCapacityRightTank;
         private TextBox MaxCapacityLeftTank;
         private Label label9;
+        private CheckBox ColdAndDarkCheckBox;
     }
 }
 

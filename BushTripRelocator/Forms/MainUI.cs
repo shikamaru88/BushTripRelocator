@@ -136,6 +136,8 @@ namespace BushTripRelocator
             CheckpointNameTextBox.Text = "";
 
             LoadCheckPoints();
+
+            CheckpointsListBox.SelectedIndex = 0;
         }
 
         private void LoadCheckPoints()
@@ -143,7 +145,12 @@ namespace BushTripRelocator
             List<string> checkpoints = databaseService.FindCheckpoints();
             CheckpointsListBox.Items.Clear();
             CheckpointsListBox.Items.AddRange(checkpoints.ToArray());
-            CheckpointsListBox.SelectedIndex = 0;
+            
+            if (checkpoints.Count > 0)
+            {
+                CheckpointsListBox.SelectedIndex = 0;
+            }
+            
         }
 
         private void LoadButton_Click(object sender, EventArgs e)
@@ -155,8 +162,16 @@ namespace BushTripRelocator
                 return;
             }
 
-            string checkPointId = CheckpointsListBox.SelectedItem.ToString();
-            SimData simData = databaseService.FindCheckpointById(checkPointId);
+            object checkPointId = CheckpointsListBox.SelectedItem;
+
+            if (checkPointId == null)
+            {
+                MessageBox.Show("You need to save checkpoint first", "No checkpoint to load", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
+                return;
+            }
+
+            SimData simData = databaseService.FindCheckpointById(checkPointId.ToString());
 
             if (LoadTimeCheckbox.Checked == true)
             {
@@ -173,7 +188,7 @@ namespace BushTripRelocator
                 simConnectService.LoadFuelToSim(simData.fuelData);
             }
 
-            simConnectService.LoadCheckpointToSim(simData);
+            simConnectService.LoadCheckpointToSim(simData, ColdAndDarkCheckBox.Checked);
 
         }
 
